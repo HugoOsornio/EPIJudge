@@ -1,7 +1,16 @@
 #include "test_framework/generic_test.h"
-long long SwapBits(long long x, int i, int j) {
-  // TODO - you fill in here.
-  return 0;
+long long SwapBits(long long x, int i, int j) 
+{
+   
+  int bitAtI = (x >> i) & 1;
+  int bitAtJ = (x >> j) & 1;
+
+  if (bitAtI != bitAtJ)
+  {
+      x ^= (long long)1 << i;
+      x ^= (long long)1 << j;
+  }
+  return x;
 }
 
 int main(int argc, char* argv[]) {
